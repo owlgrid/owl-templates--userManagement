@@ -1,0 +1,86 @@
+{
+    "id": "dOSgm7DULX4psg9czdS86",
+    "name": "User management",
+    "description": "Basic user system for apps, includes user data model, user registration, login, logout, user profile and user deletion (RGPD)",
+    "createDate": "2022-01-01T09:20:00.000Z",
+    "updateDate": "2023-01-19T09:20:00.000Z",
+    "community": true,
+    "resources": [
+        {
+            "type": "owl-workflows",
+            "numberOfInstances": 8,
+            "instances": [
+                {
+                    "id": "dOSPm7DULX4psg9czdS86",
+                    "name": "createUser"
+                },
+                {
+                    "id": "dOSgm7DULX4psg9czdS87",
+                    "name": "login"
+                },
+                {
+                    "id": "dOSgm7DULX4psg9czdS88",
+                    "name": "logout"
+                },
+                {
+                    "id": "dOSgm7DULX4psg9czdS89",
+                    "name": "deleteUser"
+                },
+                {
+                    "id": "dOSgm7DULX4psg9czdS90",
+                    "name": "deletePersonalData"
+                },
+                {
+                    "id": "dOSgm7DULX4psg9czdS91",
+                    "name": "getUserProfile"
+                },
+                {
+                    "id": "dOSgm7DULX4psg9czdS92",
+                    "name": "updateUserProfile"
+                },
+                {
+                    "id": "dOSgm7DULX4psg9czdS93",
+                    "name": "updateUserPassword"
+                },
+                {
+                    "id": "dOSgm7DULX4psg9czdS95",
+                    "name": "resetPassword"
+                },
+                {
+                    "id": "dOSgm7DULX4psg9czdS96",
+                    "name": "sendVerificationEmail"
+                },
+                {
+                    "id": "dOSgm7DULX4psg9czdS97",
+                    "name": "verifyEmail"
+                },
+                {
+                    "id": "dOSgm7DULX4psg9czdS99",
+                    "name": "sendWelcomeEmail"
+                },
+                {
+                    "id": "dOSgm7DULX4psg9czdS100",
+                    "name": "sendEmail"
+                }
+            ]
+        },
+        {
+            "type": "owl-database",
+            "numberOfInstances": 2,
+            "instances": [
+                {
+                    "id": "dOSgm7DULX4psg9czdS94",
+                    "name": "users"
+                },
+                {
+                    "id": "dOSgm7DULX4psg9czdS98",
+                    "name": "archivedUsers"
+                }
+            ]
+        }
+    ],
+    "author": {
+        "id": "AAbXsZnjSVafKtQueF54B",
+        "name": "Arthur Lefevre"
+    }
+}
