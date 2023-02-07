@@ -2,35 +2,51 @@
     "id": "getUserProfile",
     "name": "getUserProfile",
     "description": "getUserProfile method",
-    "updateDate": "new Date('2022-01-01')",
-    "createDate": "new Date('2022-01-01')",
+    "updateDate": "1675797714",
+    "createDate": "1675797714",
     "active": true,
     "private": false,
     "trigger": {
         "type": "http",
         "method": "post"
     },
-    "input": [
+    "inputs": [
         {
-            "name": "authProperties",
-            "type": "Object",
-            "properties": [
-                {
-                    "name": "userName",
-                    "type": "string"
-                },
-                {
-                    "name": "password",
-                    "type": "string"
-                }
-            ]
+            "name": "userId",
+            "type": "string",
+            "description": "User ID.",
+            "required": true
         }
     ],
-    "output": [
+    "outputs": [
         {
-            "name": "token",
-            "type": "string",
-            "description": "Token from authentication"
+            "name": "user",
+            "type": "object",
+            "description": "User object",
+            "required": true,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "firstName": {
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    ],
+    "errors": [
+        {
+            "code": "USER_NOT_FOUND",
+            "description": "User not found."
         }
     ],
     "author": {

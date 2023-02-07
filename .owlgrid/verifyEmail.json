@@ -2,35 +2,33 @@
     "id": "verifyEmail",
     "name": "verifyEmail",
     "description": "verifyEmail method",
-    "updateDate": "new Date('2022-01-01')",
-    "createDate": "new Date('2022-01-01')",
+    "updateDate": "1675797714",
+    "createDate": "1675797714",
     "active": true,
     "private": false,
     "trigger": {
         "type": "http",
         "method": "post"
     },
-    "input": [
+    "inputs": [
         {
-            "name": "authProperties",
-            "type": "Object",
-            "properties": [
-                {
-                    "name": "userName",
-                    "type": "string"
-                },
-                {
-                    "name": "password",
-                    "type": "string"
-                }
-            ]
+            "name": "userId",
+            "type": "string",
+            "description": "User id"
         }
     ],
-    "output": [
+    "outputs": [
         {
-            "name": "token",
+            "name": "success",
             "type": "string",
-            "description": "Token from authentication"
+            "description": "Success message.",
+            "required": true
+        }
+    ],
+    "errors": [
+        {
+            "code": "USER_NOT_FOUND",
+            "description": "User not found."
         }
     ],
     "author": {

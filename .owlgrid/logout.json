@@ -2,37 +2,31 @@
     "id": "logout",
     "name": "logout",
     "description": "logout method",
-    "updateDate": "new Date('2022-01-01')",
-    "createDate": "new Date('2022-01-01')",
+    "updateDate": "1675797714",
+    "createDate": "1675797714",
     "active": true,
     "private": false,
     "trigger": {
         "type": "http",
         "method": "post"
     },
-    "input": [
+    "inputs": [
         {
-            "name": "authProperties",
-            "type": "Object",
-            "properties": [
-                {
-                    "name": "userName",
-                    "type": "string"
-                },
-                {
-                    "name": "password",
-                    "type": "string"
-                }
-            ]
-        }
-    ],
-    "output": [
-        {
-            "name": "token",
+            "name": "bearerToken",
             "type": "string",
-            "description": "Token from authentication"
+            "description": "Bearer token that need to be invalidated.",
+            "required": true
         }
     ],
+    "outputs": [
+        {
+            "name": "success",
+            "type": "string",
+            "description": "Success message.",
+            "required": true
+        }
+    ],
+    "errors": [],
     "author": {
         "name": "Arthur Lefevre"
     }
