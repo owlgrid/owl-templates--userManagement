@@ -1,10 +1,15 @@
 import axios from "axios";
 import dotenv from 'dotenv';
 import { User } from "../types/type";
+import { createMongoInstance } from "../utils/createMongoInstance";
 
 dotenv.config();
 
-export default async function(user: User): Promise<{}> {
-    const r = await axios.post(`${process.env.DATABASE_SERVICE_URL}/data/collections/user/documents/`, user);
-    return {id: (r.data as {id: string}), ...user};
+export default async function(user: User) {
+    const client = await createMongoInstance();
+    await client.connect();
+    const db = client.db('owl-database');
+    const userCollection = db.collection('user');
+    console.log(await (await userCollection.find().toArray()).map(u => u._id.toString()))
+    return await userCollection.insertOne(user);
 }
