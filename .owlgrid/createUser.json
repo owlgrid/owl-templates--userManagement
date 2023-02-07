@@ -1,0 +1,47 @@
+{
+    "id": "createUser",
+    "name": "createUser",
+    "description": "createUser method",
+    "updateDate": "new Date('2022-01-01')",
+    "createDate": "new Date('2022-01-01')",
+    "active": true,
+    "private": false,
+    "trigger": {
+        "type": "http",
+        "method": "post"
+    },
+    "input": [
+        {
+            "name": "authProperties",
+            "type": "Object",
+            "properties": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "password",
+                    "type": "string"
+                },
+                {
+                    "name": "mail",
+                    "type": "string"
+                },
+                {
+                    "name": "phoneNumber",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "output": [
+        {
+            "name": "token",
+            "type": "string",
+            "description": "Token from authentication"
+        }
+    ],
+    "author": {
+        "name": "Arthur Lefevre"
+    }
+}

@@ -1,0 +1,75 @@
+{
+    "objects": [{
+            "id": "user",
+            "name": "User",
+            "properties": [
+                {
+                    "id": "id",
+                    "name": "id",
+                    "type": "string",
+                    "required": true,
+                    "unique": true
+                },
+                {
+                    "id": "name",
+                    "name": "name",
+                    "type": "date",
+                    "required": true
+                },
+                {
+                    "id": "password",
+                    "name": "password",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "creationDate",
+                    "name": "creationDate",
+                    "type": "date",
+                    "required": true
+                },
+                {
+                    "id": "mail",
+                    "name": "mail",
+                    "type": "string",
+                    "required": true
+                }
+            ]
+        }, {
+            "id": "profile",
+            "name": "Profile",
+            "properties": [
+                {
+                    "id": "id",
+                    "name": "id",
+                    "type": "string",
+                    "required": true,
+                    "unique": true
+                },
+                {
+                    "id": "phoneNumber",
+                    "name": "phoneNumber",
+                    "type": "string",
+                    "required": true
+                }
+            ]
+        }
+    ],
+    "relations": [
+        {
+            "id": "profile",
+            "nameST": "profile",
+            "nameTS": "user",
+            "description": "Profile of the user",
+            "source": {
+                "id": "user"
+            },
+            "target": {
+                "id": "profile"
+            },
+            "type": "oneToOne",
+            "requiredST": true,
+            "requiredTS": false
+        }
+    ]
+}
