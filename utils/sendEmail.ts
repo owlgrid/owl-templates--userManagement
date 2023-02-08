@@ -1,8 +1,9 @@
 import dotenv from 'dotenv';
+import { Mail } from '../types/type';
 
 dotenv.config();
 
-export async function sendEmail(email: string, message: { Subject: string, TextPart: string, HTMLPart: string }) {
+export async function sendEmail(message: Mail) {
     const Mailjet = require('node-mailjet');
     const mailjet = new Mailjet({
         apiKey: process.env.MailJet_APIKey || 'your-api-key',
@@ -13,15 +14,17 @@ export async function sendEmail(email: string, message: { Subject: string, TextP
             {
             From: {
                 Email: 'arthur@owlgrid.com',
-                Name: 'Me',
+                Name: 'Owlgrid',
             },
             To: [
                 {
-                Email: 'arthur@owlgrid.com',
-                Name: 'You',
+                Email: message.Recipient.Email,
+                Name: message.Recipient.Name,
                 },
             ],
-            ...message
+            Subject: message.Subject,
+            TextPart: message.TextPart,
+            HTMLPart: message.HTMLPart,
         }
         ],
     });

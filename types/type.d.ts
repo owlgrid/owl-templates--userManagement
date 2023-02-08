@@ -10,3 +10,13 @@ export interface User {
 export interface Profile {
     phoneNumber: string,
 }
+
+export interface Mail {
+    Subject: string,
+    TextPart: string,
+    HTMLPart?: string,
+    Recipient: {
+        Email: string,
+        Name: string,
+    }
+}
